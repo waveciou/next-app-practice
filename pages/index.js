@@ -16,6 +16,11 @@ const Home = () => {
       <h1>Welcome to Next.js Page</h1>
       <div className={`content ${styles.content}`}>
         <p>This is Home page</p>
+
+        <div className="picture-container">
+          <img className={`picture-item ${styles.usagi}`} src="/img/kanahei.png" />
+          <div className={`picture-item ${styles.piske}`} />
+        </div>
       </div>
     </div>
   );

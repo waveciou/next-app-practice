@@ -1,7 +1,12 @@
 import Head from 'next/head';
 import styles from '../styles/modules/About.module.scss';
+import { useEffect } from 'react';
 
 const about = () => {
+  useEffect(() => {
+    console.log('About Mounted');
+  }, []);
+
   return (
     <div className="wrap">
       <Head>
