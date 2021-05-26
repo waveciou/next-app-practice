@@ -1,7 +1,17 @@
-import '../styles/globals.css'
+import '../styles/main.scss'
+import Layout from '../components/Layout';
+import { useEffect } from 'react';
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+const App = ({ Component, pageProps }) => {
+  useEffect(() => {
+    console.log('APP Mounted');
+  }, []);
 
-export default MyApp
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
+};
+
+export default App

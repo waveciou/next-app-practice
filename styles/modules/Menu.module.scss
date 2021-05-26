@@ -1,0 +1,29 @@
+@charset 'UTF-8';
+@import '../utils/_utils.scss';
+
+#menu {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: $color-black;
+}
+
+.menuList {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > li {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+.menuLink {
+  display: block;
+  color: $color-white;
+
+  &.current {
+    color: $color-yellow;
+  }
+}
