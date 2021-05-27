@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/modules/Home.module.scss';
 import { useEffect } from 'react';
+import Picture from '../components/Picture';
 
 const Home = () => {
   useEffect(() => {
@@ -21,6 +22,8 @@ const Home = () => {
           <img className={`picture-item ${styles.usagi}`} src="/img/kanahei.png" />
           <div className={`picture-item ${styles.piske}`} />
         </div>
+
+        <Picture width={100} />
       </div>
     </div>
   );
