@@ -1,10 +1,11 @@
 import styles from '../styles/modules/components/Picture.module.scss';
 import { useEffect } from 'react';
+import axios from 'axios';
 
 const Picture = (props) => {
   useEffect(() => {
     console.log('Picture Mounted');
-    console.log(props.width);
+    // console.log(props);
   }, []);
 
   // Img Tag 的 src 是依照 public 資料夾為準的相對路徑
