@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 
@@ -16,18 +17,26 @@ const Article = ({ article }) => {
       <h1>{ `${article.title}` }</h1>
       <div className="content">
         <p>{ `${article.body}` }</p>
+        <Link href="/">Back</Link>
       </div>
     </div>
   )
 };
 
 export const getServerSideProps = async (context) => {
-  const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`);
-  const article = await res.data;
+  try {
+    const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`);
+    const article = await res.data;
 
-  return {
-    props: {
-      article
+    return {
+      props: {
+        article
+      }
+    }
+  } catch(err) {
+    console.log(err);
+    return {
+      props: {}
     }
   }
 };

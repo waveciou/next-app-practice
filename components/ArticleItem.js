@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'; 
+import { useRouter } from 'next/router';
 import styles from '../styles/modules/components/Card.module.scss';
 
 const ArticleItem = ({ article = {} }) => {
