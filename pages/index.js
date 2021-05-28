@@ -6,6 +6,7 @@ import styles from '../styles/modules/Home.module.scss';
 import { useEffect } from 'react';
 // Components
 import Picture from '../components/Picture';
+import ArticleList from '../components/ArticleList';
 // Plugins
 import axios from 'axios';
 
@@ -30,6 +31,8 @@ const Home = (props) => {
         </div>
 
         <Picture width={100} />
+
+        <ArticleList articles={ props.articles } />
       </div>
     </div>
   );
@@ -38,12 +41,19 @@ const Home = (props) => {
 export default Home;
 
 export const getStaticProps = async () => {
-  const res = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=6');
-  const articles = await res.data;
+  try {
+    const res = await axios.get('https://jsonplaceholder.typicode.com/posts?_limit=6');
+    const articles = await res.data;
 
-  return {
-    props: {
-      articles
+    return {
+      props: {
+        articles
+      }
+    }
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {}
     }
   }
 };
