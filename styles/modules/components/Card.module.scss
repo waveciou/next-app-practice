@@ -6,6 +6,12 @@
   border: 1px $color-white solid;
   border-radius: 5px;
   padding: 10px 15px;
+  color: $color-white;
+
+  &:hover {
+    color: $color-blue;
+    background-color: $color-white;
+  }
 }
 
 .card__title {
