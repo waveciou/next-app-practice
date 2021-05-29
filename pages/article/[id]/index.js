@@ -23,20 +23,41 @@ const Article = ({ article }) => {
   )
 };
 
-export const getServerSideProps = async (context) => {
-  try {
-    const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`);
-    const article = await res.data;
+// export const getServerSideProps = async (context) => {
+//   const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`);
+//   const article = await res.data;
 
-    return {
-      props: {
-        article
+//   return {
+//     props: {
+//       article
+//     }
+//   }
+// };
+
+export const getStaticPaths = () => {
+  let paths = [];
+
+  for (let i = 0; i < 6; i++) {
+    paths.push({
+      params: {
+        id: `${i + 1}`
       }
-    }
-  } catch(err) {
-    console.log(err);
-    return {
-      props: {}
+    })
+  }
+
+  return {
+    paths,
+    fallback: false
+  }
+};
+
+export const getStaticProps = async (context) => {
+  const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`);
+  const article = await res.data;
+
+  return {
+    props: {
+      article
     }
   }
 };
