@@ -3,12 +3,11 @@ import Head from 'next/head';
 const Meta = () => {
   return (
     <Head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <meta charSet="UTF-8" />
+      <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
       <meta name="format-detection" content="telephone=no" />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png" />
       <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png" />
       <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png" />

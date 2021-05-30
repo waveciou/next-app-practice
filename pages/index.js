@@ -10,7 +10,14 @@ import ArticleList from '../components/ArticleList';
 // Plugins
 import axios from 'axios';
 
+// Redux
+import { useDispatch } from 'react-redux';
+import { fetchposts } from '../redux/actions/postAction';
+
 const Home = (props) => {
+  // 呼叫 actions 都一定要包在 dispatch function 裡面去執行
+  const dispatch = useDispatch();
+
   useEffect(() => {
     console.log('Home Mounted');
   }, []);
@@ -24,6 +31,8 @@ const Home = (props) => {
       <h1>Welcome to Next.js Page</h1>
       <div className={`content ${styles.content}`}>
         <p>This is Home page</p>
+
+        <button onClick={ () => { dispatch(fetchposts()) } }>Action</button>
 
         <div className="picture-container">
           <img className={`picture-item ${styles.usagi}`} src="/img/kanahei.png" />
