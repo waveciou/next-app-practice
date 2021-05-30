@@ -31,6 +31,7 @@ const Home = (props) => {
       <h1>Welcome to Next.js Page</h1>
       <div className={`content ${styles.content}`}>
         <p>This is Home page</p>
+        <p>{ props.scrollValue }</p>
 
         <button onClick={ () => { dispatch(fetchposts()) } }>Action</button>
 
