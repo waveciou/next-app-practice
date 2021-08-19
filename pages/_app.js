@@ -31,7 +31,7 @@ const App = ({ Component, pageProps }) => {
     return () => {
       console.log('APP Destroyed');
       window.removeEventListener('scroll', getScrollHandler);
-      window.removeEventListener('scroll', getScreenWidthHandler);
+      window.removeEventListener('resize', getScreenWidthHandler);
     }
   }, []);
 
