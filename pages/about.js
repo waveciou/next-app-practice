@@ -2,7 +2,7 @@ import Head from 'next/head';
 import styles from '../styles/modules/About.module.scss';
 import { useEffect } from 'react';
 
-const about = () => {
+const about = ({ title }) => {
   useEffect(() => {
     console.log('About Mounted');
   }, []);
@@ -10,7 +10,7 @@ const about = () => {
   return (
     <div className="wrap">
       <Head>
-        <title>About</title>
+        <title>{title}</title>
       </Head>
 
       <h1>About Page</h1>
@@ -20,5 +20,13 @@ const about = () => {
     </div>
   );
 };
+
+export const getStaticProps = () => {
+  return {
+    props: {
+      title: 'About'
+    }
+  }
+}
 
 export default about;
